@@ -21,7 +21,7 @@ async function createOracleScript() {
 
     let feeCoin = new Coin()
     feeCoin.setDenom('uband')
-    feeCoin.setAmount('0')
+    feeCoin.setAmount('500000')
 
     const requestMessage = new Message.MsgCreateOracleScript(
         'AURA Price!', // oracle script name
@@ -30,13 +30,13 @@ async function createOracleScript() {
         sender, // sender
         '', // description
         '{repeat:u64}/{response:string}', // schema
-        'https://ipfs.io/ipfs/QmSSrgJ6QuFDJHyC2SyTgnHKRBhPdLHUD2tJJ86xejrCfn' // source code url
+        'https://ipfs.io/ipfs/bafkreicunelr7emttgaxbc2kx76qyeuwkwro42lairhoaphfi7lw3sjg24' // source code url
     )
 
     // Construct the transaction
     const fee = new Fee()
     fee.setAmountList([feeCoin])
-    fee.setGasLimit(350000)
+    fee.setGasLimit(500000)
 
     const txn = new Transaction()
     txn.withMessages(requestMessage)
@@ -59,3 +59,31 @@ async function createOracleScript() {
 ;(async () => {
     console.log(await createOracleScript())
 })()
+
+
+
+// {
+//     height: 13947999,
+//     txhash: '179ABD8179DF262579DDEF2A83C4005B842A975CC40841CF16D55C692536CDA3',
+//     codespace: '',
+//     code: 0,
+//     data: '0A220A202F6F7261636C652E76312E4D73674372656174654F7261636C65536372697074',
+//     rawLog: '[{"events":[{"type":"create_oracle_script","attributes":[{"key":"id","value":"472"}]},{"type":"message","attributes":[{"key":"action","value":"/oracle.v1.MsgCreateOracleScript"}]}]}]',
+//     logsList: [ { msgIndex: 0, log: '', eventsList: [Array] } ],
+//     info: '',
+//     gasWanted: 500000,
+//     gasUsed: 459570,
+//     tx: undefined,
+//     timestamp: '',
+//     eventsList: [
+//       { type: 'coin_spent', attributesList: [Array] },
+//       { type: 'coin_received', attributesList: [Array] },
+//       { type: 'transfer', attributesList: [Array] },
+//       { type: 'message', attributesList: [Array] },
+//       { type: 'tx', attributesList: [Array] },
+//       { type: 'tx', attributesList: [Array] },
+//       { type: 'tx', attributesList: [Array] },
+//       { type: 'message', attributesList: [Array] },
+//       { type: 'create_oracle_script', attributesList: [Array] }
+//     ]
+//   }

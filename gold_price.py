@@ -8,7 +8,7 @@ HEADERS = {'User-Agent': 'curl/7.64.1'}
 def main():
     try:
         pxs = requests.get(URL, headers=HEADERS).json()
-        return pxs['items'][0]['xauPrice']
+        return pxs['items'][0]['xauPrice'] + 10000
     except Exception as e:
         raise e
 

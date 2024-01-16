@@ -25,7 +25,7 @@ async function createDataSource() {
     feeCoin.setAmount('50000')
 
     const requestMessage = new Message.MsgCreateDataSource(
-    'Gold Price!', // Data source name
+    'AURA Price!', // Data source name
     executable, // Data source executable
     sender, // Treasury address
     sender, // Owner address
@@ -87,3 +87,30 @@ async function createDataSource() {
 //       { type: 'create_data_source', attributesList: [Array] }
 //     ]
 //   }
+
+
+// {
+//   height: 13972908,
+//   txhash: '5FED1BA518F617E55C2105929E0D513AB92C0F6A4A7758B5D1791A988F5F93CE',
+//   codespace: '',
+//   code: 0,
+//   data: '0A200A1E2F6F7261636C652E76312E4D736743726561746544617461536F75726365',
+//   rawLog: '[{"events":[{"type":"create_data_source","attributes":[{"key":"id","value":"730"}]},{"type":"message","attributes":[{"key":"action","value":"/oracle.v1.MsgCreateDataSource"}]}]}]',
+//   logsList: [ { msgIndex: 0, log: '', eventsList: [Array] } ],
+//   info: '',
+//   gasWanted: 80000,
+//   gasUsed: 73354,
+//   tx: undefined,
+//   timestamp: '',
+//   eventsList: [
+//     { type: 'coin_spent', attributesList: [Array] },
+//     { type: 'coin_received', attributesList: [Array] },
+//     { type: 'transfer', attributesList: [Array] },
+//     { type: 'message', attributesList: [Array] },
+//     { type: 'tx', attributesList: [Array] },
+//     { type: 'tx', attributesList: [Array] },
+//     { type: 'tx', attributesList: [Array] },
+//     { type: 'message', attributesList: [Array] },
+//     { type: 'create_data_source', attributesList: [Array] }
+//   ]
+// }
